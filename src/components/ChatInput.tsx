@@ -68,7 +68,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({
               onChange={(e) => setText(e.target.value)}
               disabled={disabled}
               placeholder="Mensagem..."
-              className="w-full bg-neutral-100/90 focus:bg-white text-neutral-900 placeholder:text-neutral-400 text-sm px-4 py-2.5 rounded-full border border-neutral-200/90 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] transition-all focus:outline-none"
+              className="w-full bg-neutral-100/90 focus:bg-white text-neutral-900 placeholder:text-neutral-400 text-[16px] px-4 py-2 rounded-full border border-neutral-200/90 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] transition-all focus:outline-none"
             />
           </div>
 

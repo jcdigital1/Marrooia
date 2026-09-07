@@ -17,7 +17,7 @@ export const WhatsAppModal: React.FC<WhatsAppModalProps> = ({
 }) => {
   if (!isOpen) return null;
 
-  const defaultMsg = "Olá! Vim pelo site da MARROOOIA e gostaria de solicitar um atendimento.";
+  const defaultMsg = "Olá! Vim pelo site da MARROOIA e gostaria de solicitar um atendimento.";
   const msgToSend = customMessage || defaultMsg;
 
   return (
@@ -50,7 +50,7 @@ export const WhatsAppModal: React.FC<WhatsAppModalProps> = ({
                 Atendimento WhatsApp
               </h3>
               <p className="text-xs text-neutral-300 font-medium">
-                Escolha um canal direto da MARROOOIA:
+                Escolha um canal direto da MARROOIA:
               </p>
             </div>
           </div>

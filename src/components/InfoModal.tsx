@@ -66,7 +66,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({
               Sobre nós
             </h4>
             <p className="text-sm text-neutral-700 leading-relaxed">
-              Somos a <strong className="text-neutral-950">MARROOOIA</strong>, especializada em pinturas em geral, serviços residenciais e comerciais e limpeza de placas solares. Nosso compromisso é entregar acabamento profissional de alto padrão, durabilidade e atendimento ágil.
+              Somos a <strong className="text-neutral-950">MARROOIA</strong>, especializada em pinturas em geral, serviços residenciais e comerciais e limpeza de placas solares. Nosso compromisso é entregar acabamento profissional de alto padrão, durabilidade e atendimento ágil.
             </p>
           </div>
 

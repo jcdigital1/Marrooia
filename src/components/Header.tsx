@@ -83,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({
             id="btn-header-info"
             type="button"
             onClick={onOpenProfile}
-            title="Perfil da MARROOOIA"
+            title="Perfil da MARROOIA"
             className="w-9 h-9 flex items-center justify-center rounded-full text-neutral-700 hover:text-red-600 hover:bg-neutral-100 active:scale-95 transition-all"
           >
             <Info className="w-4 h-4" />

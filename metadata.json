@@ -1,6 +1,6 @@
 {
-  "name": "MARROOOIA - Pinturas em Geral",
-  "description": "Atendimento digital interativo da MARROOOIA: pinturas em geral, residencial e comercial, e limpeza de placas solares com orçamento rápido via WhatsApp.",
+  "name": "MARROOIA - Pinturas em Geral",
+  "description": "Atendimento digital interativo da MARROOIA: pinturas em geral, residencial e comercial, e limpeza de placas solares com orçamento rápido via WhatsApp.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

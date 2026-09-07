@@ -134,7 +134,7 @@ export default function App() {
 
       // 1. Welcome Greeting
       await sendBotMessageWithDelay({
-        text: 'Olá! 👋 Seja bem-vindo à MARROOOIA!',
+        text: 'Olá! 👋 Seja bem-vindo à MARROOIA!',
       }, 500);
 
       // 2. Specialized services intro
@@ -340,7 +340,7 @@ export default function App() {
     // Section 10: Conhecer a Empresa
     if (action === 'flow_empresa') {
       await sendBotMessageWithDelay({
-        text: 'Somos a MARROOOIA, especializada em pinturas em geral, serviços residenciais e comerciais e limpeza de placas solares.',
+        text: 'Somos a MARROOIA, especializada em pinturas em geral, serviços residenciais e comerciais e limpeza de placas solares.',
       }, 650);
 
       await sendBotMessageWithDelay({
@@ -364,7 +364,7 @@ export default function App() {
         text: 'Escolha um número para atendimento:',
         type: 'whatsapp_cards',
         data: {
-          customText: 'Olá! Vim pelo site da MARROOOIA e gostaria de atendimento.',
+          customText: 'Olá! Vim pelo site da MARROOIA e gostaria de atendimento.',
         },
       }, 600);
       return;
@@ -578,7 +578,7 @@ export default function App() {
       lower.includes('regiao')
     ) {
       await sendBotMessageWithDelay({
-        text: 'A MARROOOIA atende com excelência serviços residenciais, comerciais e limpeza de placas solares. Em qual cidade você precisa?',
+        text: 'A MARROOIA atende com excelência serviços residenciais, comerciais e limpeza de placas solares. Em qual cidade você precisa?',
         type: 'quick_replies',
         options: [
           { label: 'Solicitar Orçamento', icon: '💰', action: 'flow_orcamento' },
@@ -596,7 +596,7 @@ export default function App() {
       lower.includes('boa noite')
     ) {
       await sendBotMessageWithDelay({
-        text: 'Olá! Como a MARROOOIA pode te ajudar hoje?',
+        text: 'Olá! Como a MARROOIA pode te ajudar hoje?',
         type: 'quick_replies',
         options: [
           { label: 'Pintura Residencial', icon: '🎨', action: 'flow_residencial' },
@@ -624,7 +624,7 @@ export default function App() {
   return (
     <div className="w-full h-screen h-[100dvh] bg-neutral-950 flex justify-center selection:bg-red-500 selection:text-white overflow-hidden">
       {/* Desktop iOS frame container with glass shadow */}
-      <div className="w-full max-w-[500px] h-full h-[100dvh] bg-[#E8E2D8] flex flex-col shadow-[0_25px_80px_rgba(0,0,0,0.6)] relative border-x border-neutral-400/20 overflow-hidden">
+      <div className="w-full max-w-[500px] h-full h-[100dvh] bg-[#D0C5B4] flex flex-col shadow-[0_25px_80px_rgba(0,0,0,0.6)] relative border-x border-neutral-400/20 overflow-hidden">
         <ChatBackground>
           {/* iOS Translucent Blur Header */}
           <Header
@@ -643,7 +643,7 @@ export default function App() {
             id="chat-messages-container"
             ref={chatContainerRef}
             onScroll={handleScroll}
-            className="flex-1 min-h-0 overflow-y-auto px-3 py-3 space-y-1 scroll-smooth relative"
+            className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-2.5 sm:px-3 py-3 space-y-1 scroll-smooth relative touch-pan-y overscroll-contain"
           >
             {/* Top iOS Profile Hero Contact Showcase with Prominent Mascot Avatar */}
             <ProfileHeroCard

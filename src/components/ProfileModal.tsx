@@ -87,7 +87,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
 
             {/* WhatsApp 1 */}
             <a
-              href={buildWhatsAppLink(EMPRESA.whatsapp1, "Olá! Vim pelo site da MARROOOIA.")}
+              href={buildWhatsAppLink(EMPRESA.whatsapp1, "Olá! Vim pelo site da MARROOIA.")}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => soundManager.playTap()}
@@ -114,7 +114,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
 
             {/* WhatsApp 2 */}
             <a
-              href={buildWhatsAppLink(EMPRESA.whatsapp2, "Olá! Vim pelo site da MARROOOIA.")}
+              href={buildWhatsAppLink(EMPRESA.whatsapp2, "Olá! Vim pelo site da MARROOIA.")}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => soundManager.playTap()}

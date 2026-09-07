@@ -1,8 +1,8 @@
-// Central configuration for MARROOOIA - Pinturas em Geral
+// Central configuration for MARROOIA - Pinturas em Geral
 // Conforme solicitado na seção 21 do documento de requisitos
 
 export const EMPRESA = {
-  nome: "MARROOOIA",
+  nome: "MARROOIA",
   descricao: "Pinturas em Geral",
   slogan: "Pinturas em Geral • Residencial e Comercial • Limpeza de Placas Solar",
   subtitulo: "Residencial e Comercial | Limpeza de Placas Solar",
@@ -57,13 +57,25 @@ export function generateBudgetMessage(data: {
   cidade: string;
   descricao: string;
   telefone: string;
+  fotoNome?: string;
 }): string {
-  return `Olá! Vim pelo site da MARROOOIA e gostaria de solicitar um orçamento.
+  const nome = data.nome?.trim() || "Não informado";
+  const servico = data.servico?.trim() || "Pinturas em Geral";
+  const cidade = data.cidade?.trim() || "Não informado";
+  const telefone = data.telefone?.trim() || "Não informado";
+  const descricao = data.descricao?.trim() || "Solicitação de orçamento e visita técnica";
 
-Nome: ${data.nome || "Não informado"}
-Serviço: ${data.servico || "Pinturas em Geral"}
-Cidade: ${data.cidade || "Não informado"}
-Descrição: ${data.descricao || "Solicitação de orçamento"}
+  return `*SOLICITAÇÃO DE ORÇAMENTO — MARROOIA* 🎨✨
 
-Meu telefone é: ${data.telefone || "Não informado"}`;
+Olá equipe MARROOIA! Finalizei meu atendimento pelo site e gostaria de solicitar um orçamento formal:
+
+👤 *Cliente:* ${nome}
+🛠️ *Serviço:* ${servico}
+📍 *Cidade / Local:* ${cidade}
+📱 *WhatsApp de Contato:* ${telefone}
+
+📝 *Descrição / Detalhes da Obra:*
+"${descricao}"
+
+Por gentileza, poderiam me informar os valores e a disponibilidade para atendimento ou visita técnica? Aguardo o retorno de vocês, muito obrigado! 🤝`;
 }

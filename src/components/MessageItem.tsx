@@ -86,7 +86,7 @@ export const MessageItem: React.FC<MessageItemProps> = ({
         </div>
       )}
 
-      <div className={`flex items-end gap-2 max-w-[92%] sm:max-w-[85%] ${isUser ? 'flex-row-reverse' : 'flex-row'}`}>
+      <div className={`flex items-end gap-1.5 sm:gap-2 max-w-[95%] sm:max-w-[88%] ${isUser ? 'flex-row-reverse' : 'flex-row'}`}>
         {/* Bot Avatar: only show on the last message of the group for clean visual hierarchy */}
         {!isUser && (
           isLastInGroup ? (
@@ -103,7 +103,7 @@ export const MessageItem: React.FC<MessageItemProps> = ({
         {/* Bubble */}
         <div
           onClick={() => setShowReactionPicker(!showReactionPicker)}
-          className={`relative px-4 py-2.5 cursor-pointer select-none transition-all duration-150 active:scale-[0.99] ${getBubbleRadius()} ${
+          className={`relative px-3.5 sm:px-4 py-2.5 cursor-pointer select-none transition-all duration-150 active:scale-[0.99] max-w-full min-w-0 break-words [overflow-wrap:anywhere] ${getBubbleRadius()} ${
             isUser
               ? 'bg-gradient-to-b from-red-600 via-red-600 to-rose-700 text-white shadow-[0_4px_14px_rgba(220,38,38,0.22),inset_0_1px_1px_rgba(255,255,255,0.35)] border-t border-white/20'
               : 'bg-white text-neutral-900 shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-neutral-200/75'
@@ -111,7 +111,7 @@ export const MessageItem: React.FC<MessageItemProps> = ({
         >
           {/* Text content with preserved line breaks */}
           {message.text && (
-            <div className="text-[14.5px] leading-relaxed font-normal whitespace-pre-line tracking-tight">
+            <div className="text-[14.5px] leading-relaxed font-normal whitespace-pre-line tracking-tight break-words [overflow-wrap:anywhere]">
               {message.text}
             </div>
           )}
@@ -201,16 +201,16 @@ export const MessageItem: React.FC<MessageItemProps> = ({
 
       {/* 3D iOS Quick Reply Options - Organized Grid / Wrap */}
       {!isUser && message.options && message.options.length > 0 && (
-        <div className="flex flex-wrap gap-2 mt-2 ml-10 max-w-[92%] sm:max-w-[85%]">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2 pl-8 sm:pl-10 pr-1 w-full max-w-full box-border">
           {message.options.map((opt, idx) => (
             <button
               key={`${message.id}-opt-${idx}`}
               type="button"
               onClick={() => onOptionClick(opt)}
-              className="group bg-white hover:bg-neutral-50 active:bg-neutral-100 text-neutral-800 hover:text-red-600 border border-neutral-200/90 hover:border-red-500/40 px-3.5 py-2 rounded-xl text-xs font-semibold shadow-xs active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer"
+              className="group bg-white hover:bg-neutral-50 active:bg-neutral-100 text-neutral-800 hover:text-red-600 border border-neutral-200/90 hover:border-red-500/40 px-3 sm:px-3.5 py-2 rounded-xl text-xs font-semibold shadow-xs active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer max-w-full"
             >
               {opt.icon && <span className="text-sm shrink-0">{opt.icon}</span>}
-              <span className="font-medium tracking-tight">{opt.label}</span>
+              <span className="font-medium tracking-tight truncate">{opt.label}</span>
             </button>
           ))}
         </div>

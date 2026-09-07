@@ -49,7 +49,7 @@ export const BudgetInlineForm: React.FC<BudgetInlineFormProps> = ({
 
   if (step === 'name') {
     return (
-      <form onSubmit={handleTextSubmit} className="mt-2.5 bg-white/95 backdrop-blur-md p-4 rounded-[22px] border border-white/80 shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-2.5">
+      <form onSubmit={handleTextSubmit} className="mt-2.5 bg-white/95 backdrop-blur-md p-4 rounded-[22px] border border-white/80 shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-2.5 max-w-full overflow-hidden">
         <label className="text-xs font-bold text-neutral-800 block">
           Digite seu nome completo:
         </label>
@@ -61,7 +61,7 @@ export const BudgetInlineForm: React.FC<BudgetInlineFormProps> = ({
             placeholder="Ex: João da Silva"
             value={val}
             onChange={(e) => setVal(e.target.value)}
-            className="flex-1 bg-neutral-100/90 focus:bg-white border border-neutral-200/90 rounded-2xl px-3.5 py-2.5 text-sm text-neutral-900 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)]"
+            className="flex-1 min-w-0 bg-neutral-100/90 focus:bg-white border border-neutral-200/90 rounded-2xl px-3.5 py-2.5 text-[16px] text-neutral-900 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)]"
           />
           <button
             type="submit"
@@ -77,7 +77,7 @@ export const BudgetInlineForm: React.FC<BudgetInlineFormProps> = ({
 
   if (step === 'city') {
     return (
-      <form onSubmit={handleTextSubmit} className="mt-2.5 bg-white/95 backdrop-blur-md p-4 rounded-[22px] border border-white/80 shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-2.5">
+      <form onSubmit={handleTextSubmit} className="mt-2.5 bg-white/95 backdrop-blur-md p-4 rounded-[22px] border border-white/80 shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-2.5 max-w-full overflow-hidden">
         <label className="text-xs font-bold text-neutral-800 block">
           Em qual cidade será realizado o serviço?
         </label>
@@ -89,7 +89,7 @@ export const BudgetInlineForm: React.FC<BudgetInlineFormProps> = ({
             placeholder="Ex: Gurupi, Palmas, Paraíso..."
             value={val}
             onChange={(e) => setVal(e.target.value)}
-            className="flex-1 bg-neutral-100/90 focus:bg-white border border-neutral-200/90 rounded-2xl px-3.5 py-2.5 text-sm text-neutral-900 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)]"
+            className="flex-1 min-w-0 bg-neutral-100/90 focus:bg-white border border-neutral-200/90 rounded-2xl px-3.5 py-2.5 text-[16px] text-neutral-900 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)]"
           />
           <button
             type="submit"
@@ -105,7 +105,7 @@ export const BudgetInlineForm: React.FC<BudgetInlineFormProps> = ({
 
   if (step === 'description') {
     return (
-      <form onSubmit={handleTextSubmit} className="mt-2.5 bg-white/95 backdrop-blur-md p-4 rounded-[22px] border border-white/80 shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-2.5">
+      <form onSubmit={handleTextSubmit} className="mt-2.5 bg-white/95 backdrop-blur-md p-4 rounded-[22px] border border-white/80 shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-2.5 max-w-full overflow-hidden">
         <label className="text-xs font-bold text-neutral-800 block">
           Conte brevemente o que você precisa:
         </label>
@@ -116,7 +116,7 @@ export const BudgetInlineForm: React.FC<BudgetInlineFormProps> = ({
           placeholder="Ex: Pintura externa da casa, retoque de paredes e teto da sala..."
           value={val}
           onChange={(e) => setVal(e.target.value)}
-          className="w-full bg-neutral-100/90 focus:bg-white border border-neutral-200/90 rounded-2xl px-3.5 py-2.5 text-sm text-neutral-900 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] resize-none"
+          className="w-full bg-neutral-100/90 focus:bg-white border border-neutral-200/90 rounded-2xl px-3.5 py-2.5 text-[16px] text-neutral-900 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)] resize-none"
         />
         <div className="flex justify-end">
           <button
@@ -218,7 +218,7 @@ export const BudgetInlineForm: React.FC<BudgetInlineFormProps> = ({
 
   if (step === 'phone') {
     return (
-      <form onSubmit={handleTextSubmit} className="mt-2.5 bg-white/95 backdrop-blur-md p-4 rounded-[22px] border border-white/80 shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-2.5">
+      <form onSubmit={handleTextSubmit} className="mt-2.5 bg-white/95 backdrop-blur-md p-4 rounded-[22px] border border-white/80 shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)] space-y-2.5 max-w-full overflow-hidden">
         <label className="text-xs font-bold text-neutral-800 block">
           Qual número de WhatsApp podemos usar para contato?
         </label>
@@ -230,7 +230,7 @@ export const BudgetInlineForm: React.FC<BudgetInlineFormProps> = ({
             placeholder="Ex: (63) 99999-9999"
             value={val}
             onChange={(e) => setVal(e.target.value)}
-            className="flex-1 bg-neutral-100/90 focus:bg-white border border-neutral-200/90 rounded-2xl px-3.5 py-2.5 text-sm text-neutral-900 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)]"
+            className="flex-1 min-w-0 bg-neutral-100/90 focus:bg-white border border-neutral-200/90 rounded-2xl px-3.5 py-2.5 text-[16px] text-neutral-900 focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/20 shadow-[inset_0_1px_2px_rgba(0,0,0,0.04)]"
           />
           <button
             type="submit"

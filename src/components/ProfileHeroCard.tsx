@@ -16,7 +16,7 @@ export const ProfileHeroCard: React.FC<ProfileHeroCardProps> = ({
       <div 
         onClick={onOpenProfileModal}
         className="group relative cursor-pointer"
-        title="Toque para ver o perfil completo da MARROOOIA"
+        title="Toque para ver o perfil completo da MARROOIA"
       >
         <Avatar size="hero" showOnlineDot={true} />
         
