@@ -624,7 +624,7 @@ export default function App() {
   return (
     <div className="w-full h-screen h-[100dvh] bg-neutral-950 flex justify-center selection:bg-red-500 selection:text-white overflow-hidden">
       {/* Desktop iOS frame container with glass shadow */}
-      <div className="w-full max-w-[500px] h-full h-[100dvh] bg-[#F2F2F7] flex flex-col shadow-[0_25px_80px_rgba(0,0,0,0.6)] relative border-x border-neutral-300/30 overflow-hidden">
+      <div className="w-full max-w-[500px] h-full h-[100dvh] bg-[#E8E2D8] flex flex-col shadow-[0_25px_80px_rgba(0,0,0,0.6)] relative border-x border-neutral-400/20 overflow-hidden">
         <ChatBackground>
           {/* iOS Translucent Blur Header */}
           <Header
