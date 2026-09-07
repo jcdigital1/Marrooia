@@ -70,7 +70,7 @@ export const MessageItem: React.FC<MessageItemProps> = ({
       {/* iOS Floating Reaction Picker */}
       {showReactionPicker && (
         <div
-          className={`absolute -top-9 z-30 flex items-center gap-1.5 bg-white/95 backdrop-blur-xl px-2.5 py-1 rounded-full shadow-[0_8px_25px_rgba(0,0,0,0.18)] border border-neutral-200/80 animate-in zoom-in-95 duration-150 ${
+          className={`absolute -top-9 z-30 flex items-center gap-1.5 bg-neutral-900/95 backdrop-blur-xl px-2.5 py-1 rounded-full shadow-[0_8px_25px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.2)] border border-neutral-700 animate-in zoom-in-95 duration-150 ${
             isUser ? 'right-2' : 'left-10'
           }`}
         >
@@ -78,7 +78,7 @@ export const MessageItem: React.FC<MessageItemProps> = ({
             <button
               key={emoji}
               onClick={() => handleReaction(emoji)}
-              className="text-base hover:scale-125 active:scale-95 transition-transform p-0.5"
+              className="text-base hover:scale-125 active:scale-95 transition-transform p-0.5 cursor-pointer"
             >
               {emoji}
             </button>
@@ -93,32 +93,32 @@ export const MessageItem: React.FC<MessageItemProps> = ({
             <Avatar
               size="sm"
               onClick={onOpenProfile}
-              className="mb-0.5 cursor-pointer hover:scale-110 transition-transform shrink-0 shadow-xs"
+              className="mb-0.5 cursor-pointer hover:scale-110 transition-transform shrink-0 shadow-md"
             />
           ) : (
             <div className="w-8 shrink-0 select-none pointer-events-none" />
           )
         )}
 
-        {/* Bubble */}
+        {/* 3D Bubble */}
         <div
           onClick={() => setShowReactionPicker(!showReactionPicker)}
           className={`relative px-3.5 sm:px-4 py-2.5 cursor-pointer select-none transition-all duration-150 active:scale-[0.99] max-w-full min-w-0 break-words [overflow-wrap:anywhere] ${getBubbleRadius()} ${
             isUser
-              ? 'bg-gradient-to-b from-red-600 via-red-600 to-rose-700 text-white shadow-[0_4px_14px_rgba(220,38,38,0.22),inset_0_1px_1px_rgba(255,255,255,0.35)] border-t border-white/20'
-              : 'bg-white text-neutral-900 shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-neutral-200/75'
+              ? 'bg-gradient-to-b from-red-600 via-red-600 to-rose-700 text-white shadow-[0_8px_20px_rgba(220,38,38,0.35),0_2px_4px_rgba(0,0,0,0.6),inset_0_1px_1.5px_rgba(255,255,255,0.45)] border-t border-white/30'
+              : 'bg-[#16171E] text-white shadow-[0_10px_28px_rgba(0,0,0,0.7),0_2px_6px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.18)] border border-neutral-700/80 hover:border-neutral-600'
           }`}
         >
-          {/* Text content with preserved line breaks */}
+          {/* Text content with preserved line breaks and pure white typography */}
           {message.text && (
-            <div className="text-[14.5px] leading-relaxed font-normal whitespace-pre-line tracking-tight break-words [overflow-wrap:anywhere]">
+            <div className="text-[14.5px] sm:text-[15px] leading-relaxed font-normal whitespace-pre-line tracking-tight break-words [overflow-wrap:anywhere] text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
               {message.text}
             </div>
           )}
 
           {/* Attached image preview */}
           {message.image && (
-            <div className="mt-2.5 rounded-2xl overflow-hidden border border-black/10 shadow-sm max-h-52">
+            <div className="mt-2.5 rounded-2xl overflow-hidden border border-neutral-700 shadow-md max-h-52 bg-black">
               <img src={message.image} alt="Foto anexada" className="w-full h-full object-cover" />
             </div>
           )}
@@ -179,11 +179,11 @@ export const MessageItem: React.FC<MessageItemProps> = ({
           {/* Timestamp and Delivery Marks */}
           <div
             className={`flex items-center justify-end gap-1 mt-1 text-[10px] font-medium select-none ${
-              isUser ? 'text-white/80' : 'text-neutral-400'
+              isUser ? 'text-white/85' : 'text-neutral-400'
             }`}
           >
             <span>{message.timestamp}</span>
-            {isUser && <CheckCheck className="w-3.5 h-3.5 text-white/90" />}
+            {isUser && <CheckCheck className="w-3.5 h-3.5 text-white/95" />}
           </div>
 
           {/* Attached Reaction Pill */}
@@ -191,7 +191,7 @@ export const MessageItem: React.FC<MessageItemProps> = ({
             <div
               className={`absolute -bottom-2.5 ${
                 isUser ? 'left-3' : 'right-3'
-              } bg-white rounded-full px-2 py-0.5 shadow-[0_2px_8px_rgba(0,0,0,0.15)] border border-neutral-200/80 text-xs flex items-center animate-in zoom-in-75 duration-150`}
+              } bg-[#1D1E26] rounded-full px-2 py-0.5 shadow-[0_2px_8px_rgba(0,0,0,0.6)] border border-neutral-700 text-xs flex items-center animate-in zoom-in-75 duration-150`}
             >
               <span>{message.reaction}</span>
             </div>
@@ -199,18 +199,18 @@ export const MessageItem: React.FC<MessageItemProps> = ({
         </div>
       </div>
 
-      {/* 3D iOS Quick Reply Options - Organized Grid / Wrap */}
+      {/* 3D iOS Quick Reply Options - Tactile Raised Buttons */}
       {!isUser && message.options && message.options.length > 0 && (
-        <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2 pl-8 sm:pl-10 pr-1 w-full max-w-full box-border">
+        <div className="flex flex-wrap gap-2 mt-2.5 pl-8 sm:pl-10 pr-1 w-full max-w-full box-border">
           {message.options.map((opt, idx) => (
             <button
               key={`${message.id}-opt-${idx}`}
               type="button"
               onClick={() => onOptionClick(opt)}
-              className="group bg-white hover:bg-neutral-50 active:bg-neutral-100 text-neutral-800 hover:text-red-600 border border-neutral-200/90 hover:border-red-500/40 px-3 sm:px-3.5 py-2 rounded-xl text-xs font-semibold shadow-xs active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer max-w-full"
+              className="group bg-gradient-to-b from-[#22242E] to-[#16171E] hover:from-[#2C2E3B] hover:to-[#1E1F28] active:from-[#14151B] active:to-[#101115] text-white hover:text-sky-300 border border-neutral-700/90 hover:border-sky-500/50 px-3.5 py-2.5 rounded-2xl text-xs font-bold shadow-[0_4px_14px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.18)] active:translate-y-0.5 active:shadow-[0_1px_3px_rgba(0,0,0,0.7)] transition-all flex items-center gap-2 cursor-pointer max-w-full"
             >
-              {opt.icon && <span className="text-sm shrink-0">{opt.icon}</span>}
-              <span className="font-medium tracking-tight truncate">{opt.label}</span>
+              {opt.icon && <span className="text-sm shrink-0 drop-shadow-xs">{opt.icon}</span>}
+              <span className="font-semibold tracking-tight truncate">{opt.label}</span>
             </button>
           ))}
         </div>

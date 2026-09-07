@@ -32,11 +32,11 @@ export const Avatar: React.FC<AvatarProps> = ({
       onClick={onClick}
       className={`relative shrink-0 rounded-full select-none ${onClick ? 'cursor-pointer' : ''} ${className}`}
     >
-      {/* 3D iOS Layered Shadow & Specular Ring */}
+      {/* 3D Layered Shadow & Specular Metallic Ring */}
       <div
-        className={`rounded-full p-0.5 bg-gradient-to-b from-white via-red-500/80 to-neutral-900 shadow-[0_4px_14px_rgba(0,0,0,0.18),inset_0_1px_1px_rgba(255,255,255,0.8)] transition-transform duration-200 active:scale-95 ${sizeClasses[size]}`}
+        className={`rounded-full p-[2px] bg-gradient-to-b from-neutral-600 via-neutral-800 to-black shadow-[0_8px_20px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.4)] transition-transform duration-200 active:scale-95 ${sizeClasses[size]}`}
       >
-        <div className="w-full h-full rounded-full overflow-hidden bg-neutral-900 flex items-center justify-center relative border border-black/10">
+        <div className="w-full h-full rounded-full overflow-hidden bg-neutral-950 flex items-center justify-center relative border border-white/10">
           {!hasError ? (
             <img
               src={EMPRESA.logo}
@@ -54,13 +54,13 @@ export const Avatar: React.FC<AvatarProps> = ({
           )}
 
           {/* 3D iOS Gloss Highlight */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/30 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/25 via-transparent to-transparent pointer-events-none" />
         </div>
       </div>
 
       {/* Online indicator */}
       {showOnlineDot && (
-        <span className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full shadow-xs flex items-center justify-center">
+        <span className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-neutral-950 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.8)] flex items-center justify-center">
           <span className="w-1.5 h-1.5 bg-white rounded-full animate-ping opacity-75" />
         </span>
       )}

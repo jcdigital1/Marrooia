@@ -622,11 +622,11 @@ export default function App() {
   };
 
   return (
-    <div className="w-full h-screen h-[100dvh] bg-neutral-950 flex justify-center selection:bg-red-500 selection:text-white overflow-hidden">
-      {/* Desktop iOS frame container with glass shadow */}
-      <div className="w-full max-w-[500px] h-full h-[100dvh] bg-[#D0C5B4] flex flex-col shadow-[0_25px_80px_rgba(0,0,0,0.6)] relative border-x border-neutral-400/20 overflow-hidden">
+    <div className="w-full h-screen h-[100dvh] bg-black flex justify-center selection:bg-red-500 selection:text-white overflow-hidden">
+      {/* Desktop frame container with 3D obsidian depth */}
+      <div className="w-full max-w-[500px] h-full h-[100dvh] bg-[#08080A] flex flex-col shadow-[0_25px_80px_rgba(0,0,0,0.95)] relative border-x border-neutral-800/80 overflow-hidden">
         <ChatBackground>
-          {/* iOS Translucent Blur Header */}
+          {/* Translucent Blur Header */}
           <Header
             onOpenWhatsApp={() => setIsWhatsAppModalOpen(true)}
             onOpenProfile={() => setIsProfileModalOpen(true)}
@@ -650,9 +650,9 @@ export default function App() {
               onOpenProfileModal={() => setIsProfileModalOpen(true)}
             />
 
-            {/* Date Tag */}
+            {/* 3D Date Tag */}
             <div className="flex justify-center my-2">
-              <span className="bg-white/70 backdrop-blur-md text-neutral-500 text-[11px] font-semibold px-3 py-0.5 rounded-full shadow-2xs border border-neutral-200/50">
+              <span className="bg-neutral-900/90 backdrop-blur-md text-neutral-300 text-[11px] font-bold px-3.5 py-1 rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.15)] border border-neutral-700/80">
                 Hoje
               </span>
             </div>
@@ -696,7 +696,7 @@ export default function App() {
             <button
               type="button"
               onClick={() => triggerAutoScroll(true)}
-              className="absolute bottom-16 right-4 z-40 bg-neutral-900/90 hover:bg-neutral-900 active:scale-95 text-white text-xs font-semibold px-3.5 py-1.5 rounded-full shadow-lg border border-neutral-700/60 backdrop-blur-md flex items-center gap-1.5 transition-all animate-in fade-in zoom-in-95 cursor-pointer"
+              className="absolute bottom-16 right-4 z-40 bg-neutral-900/95 hover:bg-neutral-850 active:scale-95 text-white text-xs font-bold px-3.5 py-2 rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.2)] border border-neutral-700 backdrop-blur-md flex items-center gap-1.5 transition-all animate-in fade-in zoom-in-95 cursor-pointer"
             >
               <span>↓ Novas mensagens</span>
             </button>
