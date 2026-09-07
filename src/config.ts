@@ -10,7 +10,9 @@ export const EMPRESA = {
   whatsapp2: "5563992663256",
   whatsapp1Formatado: "(63) 98403-6382",
   whatsapp2Formatado: "(63) 99266-3256",
-  logo: "https://i.postimg.cc/g2w8yCnJ/file-00000000ab18820eb8ad6adc6b70f20c.png",
+  logo: "/logo.webp",
+  logoPng: "/logo.png",
+  logoExternal: "https://i.postimg.cc/g2w8yCnJ/file-00000000ab18820eb8ad6adc6b70f20c.png",
 };
 
 export const SERVICES_INFO = [

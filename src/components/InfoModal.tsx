@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, CheckCircle, Phone, Sparkles, Paintbrush, Sun, Building2, Home } from 'lucide-react';
 import { EMPRESA, SERVICES_INFO, buildWhatsAppLink } from '../config';
+import { Avatar } from './Avatar';
 
 interface InfoModalProps {
   isOpen: boolean;
@@ -36,14 +37,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({
           </button>
           
           <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-            <div className="w-20 h-20 rounded-full p-1 bg-white shrink-0 shadow-lg ring-2 ring-red-500/40">
-              <img
-                src={EMPRESA.logo}
-                alt={EMPRESA.nome}
-                className="w-full h-full object-cover rounded-full"
-                referrerPolicy="no-referrer"
-              />
-            </div>
+            <Avatar size="xl" />
             <div>
               <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-600/30 text-red-300 text-xs font-semibold mb-1">
                 <Sparkles className="w-3 h-3" />

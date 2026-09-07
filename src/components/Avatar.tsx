@@ -16,7 +16,23 @@ export const Avatar: React.FC<AvatarProps> = ({
   onClick,
   alt = EMPRESA.nome,
 }) => {
-  const [hasError, setHasError] = useState(false);
+  const [currentSrcIndex, setCurrentSrcIndex] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // High performance cascade: local WebP (33KB) -> local PNG (161KB) -> external CDN
+  const sources = [
+    EMPRESA.logo,
+    EMPRESA.logoPng || '/logo.png',
+    EMPRESA.logoExternal || 'https://i.postimg.cc/g2w8yCnJ/file-00000000ab18820eb8ad6adc6b70f20c.png',
+  ].filter(Boolean);
+
+  const handleError = () => {
+    if (currentSrcIndex < sources.length - 1) {
+      setCurrentSrcIndex((prev) => prev + 1);
+    }
+  };
+
+  const currentSrc = sources[currentSrcIndex] || EMPRESA.logo;
 
   const sizeClasses = {
     xs: 'w-7 h-7',
@@ -36,22 +52,24 @@ export const Avatar: React.FC<AvatarProps> = ({
       <div
         className={`rounded-full p-[2px] bg-gradient-to-b from-neutral-600 via-neutral-800 to-black shadow-[0_8px_20px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.4)] transition-transform duration-200 active:scale-95 ${sizeClasses[size]}`}
       >
-        <div className="w-full h-full rounded-full overflow-hidden bg-neutral-950 flex items-center justify-center relative border border-white/10">
-          {!hasError ? (
-            <img
-              src={EMPRESA.logo}
-              alt={alt}
-              onError={() => setHasError(true)}
-              className="w-full h-full object-cover object-center rounded-full transform transition-transform duration-300 hover:scale-105"
-              referrerPolicy="no-referrer"
-              loading="eager"
-            />
-          ) : (
-            // Fallback mascot visual if external host blocks referrer
-            <div className="w-full h-full bg-gradient-to-br from-red-600 via-neutral-900 to-black flex items-center justify-center text-white font-extrabold text-xs">
-              M
+        <div className="w-full h-full rounded-full overflow-hidden bg-[#101117] flex items-center justify-center relative border border-white/10">
+          {/* Instant placeholder background so it never flashes white or blank */}
+          {!isLoaded && (
+            <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-950 to-black flex items-center justify-center text-red-500/80 font-black text-xs">
+              <span>M</span>
             </div>
           )}
+
+          <img
+            src={currentSrc}
+            alt={alt}
+            onError={handleError}
+            onLoad={() => setIsLoaded(true)}
+            decoding="async"
+            loading="eager"
+            className={`w-full h-full object-cover object-center rounded-full transform transition-opacity duration-200 ${isLoaded ? 'opacity-100' : 'opacity-90'}`}
+            referrerPolicy="no-referrer"
+          />
 
           {/* 3D iOS Gloss Highlight */}
           <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/25 via-transparent to-transparent pointer-events-none" />

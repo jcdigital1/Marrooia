@@ -2,6 +2,7 @@ import React from 'react';
 import { X, CheckCircle2, MessageSquare, Sparkles, ExternalLink } from 'lucide-react';
 import { EMPRESA, SERVICES_INFO, buildWhatsAppLink } from '../config';
 import { VerifiedBadge } from './VerifiedBadge';
+import { Avatar } from './Avatar';
 import { soundManager } from '../utils/sound';
 
 interface ProfileModalProps {
@@ -47,19 +48,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
 
         {/* Big Avatar & Header Showcase */}
         <div className="px-6 pt-4 pb-5 flex flex-col items-center text-center">
-          <div className="relative mb-3">
-            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1.5 bg-gradient-to-tr from-red-600 via-neutral-700 to-sky-500 shadow-[0_12px_32px_rgba(0,0,0,0.8)] ring-2 ring-white/20">
-              <img
-                src={EMPRESA.logo}
-                alt={EMPRESA.nome}
-                className="w-full h-full object-cover rounded-full bg-neutral-950"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <span className="absolute bottom-1 right-1 w-7 h-7 bg-emerald-500 border-2 border-[#13141B] rounded-full flex items-center justify-center shadow-md">
-              <CheckCircle2 className="w-4 h-4 text-white" />
-            </span>
-          </div>
+          <Avatar size="hero" showOnlineDot={true} className="mb-3" />
 
           <div className="flex items-center justify-center gap-2">
             <h2 className="text-2xl font-black text-white tracking-tight font-['Outfit',sans-serif] drop-shadow-sm">
